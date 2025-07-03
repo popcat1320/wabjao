@@ -1,39 +1,112 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>เว็บไซต์</title>
-
+  <meta charset="UTF-8" />
+  <title>เครื่องเล่นเพลง</title>
   <style>
-    @font-face {
-      font-family: 'pixel';
-      src: url('PressStart2P-Regular.ttf') format('truetype');
-    }
-
     body {
-      padding: 40px;
-      font-family: 'pixel', monospace;
-      background-color: aqua;
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to right, #111, #222);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
     }
 
-    h1 {
-      font-family: 'pixel';
-      font-size: 50px;
-      background-color: aqua;
-    
+    .player {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px hotpink;
+      text-align: center;
+      width: 300px;
     }
-    p{
-      font-family: 'pixel';
-       }
+
+    .cover {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      animation: rotate 5s linear infinite;
+      border: 5px solid hotpink;
+    }
+
+    .cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h2 {
+      margin: 10px 0 5px;
+    }
+
+    .wave {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 20px 0;
+    }
+
+    .bar {
+      width: 5px;
+      height: 20px;
+      background: aqua;
+      animation: bounce 1s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .bar:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .bar:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes bounce {
+      0%, 100% { height: 20px; }
+      50% { height: 40px; }
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 15px;
+    }
   </style>
 </head>
-
 <body>
-  <h1>RONALDO</h1>
-  <detail> <sumary>
-    ronado
-  </sumary>
-    <p>xxxxxxxxxxxxxxxxxxxxxx</p>
-  </detail>
+
+  <div class="player">
+    <div class="cover">
+      <img src="https://i.scdn.co/image/ab67616d0000b273d2f2a5bd20f7ea2d177beb02" alt="ปกเพลง">
+    </div>
+    <h2>ชื่อเพลง: Shape of You</h2>
+    <p>ศิลปิน: Ed Sheeran</p>
+
+    <div class="wave">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <audio controls autoplay>
+      <source src="https://p.scdn.co/mp3-preview/2f6cc004a6fa9e2c8dfc63b792f8d6a3fc37b96a?cid=774b29d4f13844c495f206cafdad9c86" type="audio/mpeg">
+      เบราว์เซอร์ของคุณไม่รองรับการเล่นเพลง
+    </audio>
+  </div>
+
 </body>
 </html>
